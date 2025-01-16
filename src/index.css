@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 20s ease infinite;
+}
+
+@keyframes wave {
+  0%, 100% {
+    clip-path: polygon(
+      0% 48%,
+      8% 47%,
+      16% 48%,
+      24% 50%,
+      32% 52%,
+      40% 54%,
+      48% 55%,
+      56% 54%,
+      64% 52%,
+      72% 50%,
+      80% 48%,
+      88% 47%,
+      96% 48%,
+      100% 49%,
+      100% 100%,
+      0% 100%
+    );
+  }
+  50% {
+    clip-path: polygon(
+      0% 52%,
+      8% 54%,
+      16% 56%,
+      24% 57%,
+      32% 56%,
+      40% 54%,
+      48% 52%,
+      56% 50%,
+      64% 48%,
+      72% 47%,
+      80% 48%,
+      88% 50%,
+      96% 52%,
+      100% 53%,
+      100% 100%,
+      0% 100%
+    );
+  }
+}
+
+.wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, transparent 0%, rgba(23, 23, 43, 0.8) 100%);
+  animation: wave 20s ease-in-out infinite;
+}
+
+.grid-background {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  mask-image: radial-gradient(circle at center, black 30%, transparent 70%);
+}
+
+.glow-effect {
+  position: absolute;
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(
+    circle at center,
+    rgba(99, 102, 241, 0.08) 0%,
+    rgba(76, 29, 149, 0.05) 30%,
+    transparent 70%
+  );
+  filter: blur(40px);
+  opacity: 0.7;
+  animation: float 15s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translate(-50%, -50%) scale(1.1) rotate(5deg);
+  }
+  75% {
+    transform: translate(-50%, -50%) scale(0.9) rotate(-5deg);
+  }
+}
