@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Send, Mail } from 'lucide-react';
+import { Github, Linkedin, Send, Mail, FileText } from 'lucide-react';
 
 function App() {
   return (
@@ -50,6 +50,15 @@ function App() {
               aria-label="Telegram"
             >
               <Send className="w-6 h-6 md:w-7 md:h-7" />
+            </a>
+            <a
+              href="https://meldxkviel.github.io/cv/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white transition-colors duration-300"
+              aria-label="CV"
+            >
+              <FileText className="w-6 h-6 md:w-7 md:h-7" />
             </a>
           </div>
 
